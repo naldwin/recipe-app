@@ -1,0 +1,14 @@
+@use "../mixins" as *;
+
+.tag {
+  display: inline-flex;
+  align-items: center;
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  padding: 0.25em 0.6em;
+  border-radius: var(--radius-full);
+  background-color: var(--color-surface-hover);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+}

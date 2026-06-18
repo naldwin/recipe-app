@@ -8,7 +8,19 @@ import {
 } from "react-router";
 
 import type { Route } from "./+types/root";
+import "./styles/design-tokens.scss";
 import "./app.css";
+
+const FOUC_SCRIPT = `
+  (function() {
+    var theme;
+    try { theme = localStorage.getItem("theme"); } catch(e) {}
+    if (!theme) {
+      theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+    document.documentElement.setAttribute("data-theme", theme);
+  })();
+`;
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -31,6 +43,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
+        <script dangerouslySetInnerHTML={{ __html: FOUC_SCRIPT }} />
       </head>
       <body>
         {children}

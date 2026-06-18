@@ -1,0 +1,10 @@
+// ============================================
+// Design Tokens — Entry Point
+// ============================================
+// Order matters: variables first, then mixins/themes, then base.
+// Use @use instead of @import (recommended in modern Sass).
+
+@use "variables";
+@use "mixins";
+@use "themes";
+@use "base";

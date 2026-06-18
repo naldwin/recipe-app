@@ -1,0 +1,106 @@
+@use "../mixins" as *;
+
+.recipe-form-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--spacing-md);
+}
+
+.recipe-form {
+  @include card;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  outline: none;
+}
+
+.recipe-form__heading {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin: 0 0 var(--spacing-lg);
+}
+
+.recipe-form__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.recipe-form__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.recipe-form__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text);
+}
+
+.recipe-form__input,
+.recipe-form__textarea {
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-sm);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color var(--transition-fast);
+
+  &:focus {
+    border-color: var(--color-primary);
+  }
+
+  &:disabled {
+    opacity: 0.6;
+  }
+}
+
+.recipe-form__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.recipe-form__error {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  margin: 0;
+}
+
+.recipe-form__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+  padding-top: var(--spacing-sm);
+}
+
+.recipe-form__btn {
+  @include button-base;
+}
+
+.recipe-form__btn--cancel {
+  background: transparent;
+  color: var(--color-text-secondary);
+
+  &:hover {
+    background-color: var(--color-surface-hover);
+  }
+}
+
+.recipe-form__btn--submit {
+  background-color: var(--color-primary);
+  color: #ffffff;
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}

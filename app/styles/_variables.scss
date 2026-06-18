@@ -1,0 +1,126 @@
+// ============================================
+// Design Tokens — Variables
+// ============================================
+
+// --- Spacing scale (4px base) ---
+$spacing: (
+  "xs":   0.25rem,
+  "sm":   0.5rem,
+  "md":   1rem,
+  "lg":   1.5rem,
+  "xl":   2rem,
+  "2xl":  3rem,
+  "3xl":  4rem,
+);
+
+// --- Typography ---
+$font-family-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+$font-family-mono: "JetBrains Mono", "Fira Code", ui-monospace, monospace;
+
+$font-size: (
+  "xs":   0.75rem,
+  "sm":   0.875rem,
+  "base": 1rem,
+  "lg":   1.125rem,
+  "xl":   1.25rem,
+  "2xl":  1.5rem,
+  "3xl":  1.875rem,
+  "4xl":  2.25rem,
+);
+
+$font-weight: (
+  "normal":  400,
+  "medium":  500,
+  "semibold": 600,
+  "bold":    700,
+);
+
+$line-height: (
+  "tight":   1.25,
+  "normal":  1.5,
+  "relaxed": 1.75,
+);
+
+// --- Border radius ---
+$radius: (
+  "sm":   0.25rem,
+  "md":   0.5rem,
+  "lg":   1rem,
+  "full": 9999px,
+);
+
+// --- Shadows ---
+$shadow: (
+  "sm":  "0 1px 2px 0 rgb(0 0 0 / 0.05)",
+  "md":  "0 4px 6px -1px rgb(0 0 0 / 0.1)",
+  "lg":  "0 10px 15px -3px rgb(0 0 0 / 0.1)",
+);
+
+// --- Breakpoints ---
+$breakpoint: (
+  "sm":  640px,
+  "md":  768px,
+  "lg":  1024px,
+  "xl":  1280px,
+);
+
+// --- Z-index ---
+$z-index: (
+  "dropdown": 10,
+  "sticky":   20,
+  "modal":    30,
+  "toast":    40,
+);
+
+// --- Transitions ---
+$transition: (
+  "fast":   150ms,
+  "normal": 250ms,
+  "slow":   400ms,
+);
+
+// ============================================
+// CSS Custom Properties (light-mode defaults)
+// ============================================
+:root {
+  // Spacing
+  @each $key, $val in $spacing {
+    --spacing-#{$key}: #{$val};
+  }
+
+  // Typography
+  --font-family-sans: #{$font-family-sans};
+  --font-family-mono: #{$font-family-mono};
+
+  @each $key, $val in $font-size {
+    --font-size-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $font-weight {
+    --font-weight-#{$key}: #{$val};
+  }
+
+  @each $key, $val in $line-height {
+    --line-height-#{$key}: #{$val};
+  }
+
+  // Border radius
+  @each $key, $val in $radius {
+    --radius-#{$key}: #{$val};
+  }
+
+  // Shadows
+  @each $key, $val in $shadow {
+    --shadow-#{$key}: #{$val};
+  }
+
+  // Z-index
+  @each $key, $val in $z-index {
+    --z-#{$key}: #{$val};
+  }
+
+  // Transitions
+  @each $key, $val in $transition {
+    --transition-#{$key}: #{$val};
+  }
+}

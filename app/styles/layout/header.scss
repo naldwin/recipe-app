@@ -1,0 +1,26 @@
+@use "../mixins" as *;
+
+.header {
+  text-align: center;
+  padding: var(--spacing-md);
+
+  @include respond-up(md) {
+    padding: var(--spacing-xl);
+  }
+
+  @include respond-up(lg) {
+    padding: var(--spacing-2xl);
+  }
+
+  .header__title {
+    font-size: var(--font-size-xl);
+
+    @include respond-up(md) {
+      font-size: var(--font-size-3xl);
+    }
+
+    @include respond-up(lg) {
+      font-size: var(--font-size-4xl);
+    }
+  }
+}

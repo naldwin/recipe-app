@@ -1,0 +1,75 @@
+@use "../mixins" as *;
+
+.confirm-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--spacing-md);
+}
+
+.confirm-dialog {
+  @include card;
+  width: 100%;
+  max-width: 360px;
+  outline: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.confirm-dialog__message {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: var(--line-height-normal);
+  margin: 0;
+}
+
+.confirm-dialog__actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-sm);
+}
+
+.confirm-dialog__btn {
+  @include button-base;
+}
+
+.confirm-dialog__btn--cancel {
+  background: transparent;
+  color: var(--color-text-secondary);
+
+  &:hover {
+    background-color: var(--color-surface-hover);
+  }
+}
+
+.confirm-dialog__btn--default {
+  background-color: var(--color-primary);
+  color: #ffffff;
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+  }
+}
+
+.confirm-dialog__btn--danger {
+  background-color: var(--color-error);
+  color: #ffffff;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.confirm-dialog__btn--warning {
+  background-color: var(--color-warning);
+  color: #0f172a;
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

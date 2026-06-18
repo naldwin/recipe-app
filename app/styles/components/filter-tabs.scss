@@ -1,0 +1,30 @@
+@use "../mixins" as *;
+
+.filter-tabs {
+  display: flex;
+  gap: var(--spacing-xs);
+}
+
+.filter-tabs__tab {
+  @include button-base;
+  background: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-full);
+  padding: var(--spacing-xs) var(--spacing-md);
+
+  &:hover {
+    background-color: var(--color-surface-hover);
+    color: var(--color-text);
+  }
+}
+
+.filter-tabs__tab--active {
+  background-color: var(--color-primary);
+  color: #ffffff;
+
+  &:hover {
+    background-color: var(--color-primary-hover);
+    color: #ffffff;
+  }
+}
