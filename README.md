@@ -1,87 +1,99 @@
-# Welcome to React Router!
+## 1. Development Process
 
-A modern, production-ready template for building full-stack React applications using React Router.
+Initially, I was trying to find the best framework to use. I started with TanStack Start, but as I went on, I realized it was too overkill for this project. Because of that, I decided to switch to React only.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/remix-run/react-router-templates/tree/main/default)
+I chose React instead of other frameworks because it is smaller and I am already familiar with its common features such as `useState`, `useEffect`, and how JavaScript is used inside the JSX return area of each component. Although I am not yet fully knowledgeable about React’s best practices, especially in terms of file structure and project organization, I decided to go with what I think I can maintain more easily.
 
-## Features
+For the backend, I used Supabase for easy database integration, especially due to time constraints. I wanted a smaller and faster tech stack suitable for a project like this.
 
-- 🚀 Server-side rendering
-- ⚡️ Hot Module Replacement (HMR)
-- 📦 Asset bundling and optimization
-- 🔄 Data loading and mutations
-- 🔒 TypeScript by default
-- 🎉 TailwindCSS for styling
-- 📖 [React Router docs](https://reactrouter.com/)
+I started by reviewing documentation online on how to set up a Supabase project and connect it to my React application. Some YouTube videos helped me understand the general flow, but the official documentation helped me more because I realized I was watching tutorials based on older Supabase versions.
 
-## Getting Started
+YouTube reference:
+https://www.youtube.com/watch?v=KxRfAqm8eqI
 
-### Installation
+Supabase documentation:
+https://supabase.com/docs/guides/getting-started/quickstarts/reactjs
 
-Install the dependencies:
+React documentation:
+https://react.dev/learn
 
-```bash
-npm install
-```
+I initiated the project by creating the React app, and the initial scaffold that was generated was pushed to a Git repository. Originally, I planned to push per feature, but due to time constraints and being the only developer, I decided to complete everything in one go.
 
-### Development
+The first push was the initial project setup, and the second push was the final product, where Supabase was already connected, request functions were implemented, and frontend features were completed.
 
-Start the development server with HMR:
+The main challenge I encountered was initially understanding Supabase since it was new to me in terms of actual implementation, even though I was already aware of its general use. After exploring it, I found that the setup process was relatively straightforward.
 
-```bash
-npm run dev
-```
+Another challenge during development was the frontend UI/UX, specifically the UI part. As a Fullstack Developer, I am not very experienced in writing SCSS manually, although I understand the basic concepts. My experience is more focused on using CSS libraries such as ShadCN, Tailwind, PrimeNG, and PrimeFlex, where reusable components are already provided.
 
-Your application will be available at `http://localhost:5173`.
+To overcome this, I first tried to understand SCSS syntax better. I was already somewhat familiar with it due to my background in graphics, especially with concepts like padding, spacing, and color values, flex, grids, and etc. I utilized AI tools (opencode, DeepSeek model) to generate a starter UI during development. After that, I manually modified and adjusted the design to match my preference. That process helped me finish the project faster instead of investing more time on studying and manually creating everything. I got to focus more on what matters in order to match the project requirements.
 
-## Building for Production
-
-Create a production build:
-
-```bash
-npm run build
-```
-
-## Deployment
-
-### Docker Deployment
-
-To build and run using Docker:
-
-```bash
-docker build -t my-app .
-
-# Run the container
-docker run -p 3000:3000 my-app
-```
-
-The containerized application can be deployed to any platform that supports Docker, including:
-
-- AWS ECS
-- Google Cloud Run
-- Azure Container Apps
-- Digital Ocean App Platform
-- Fly.io
-- Railway
-
-### DIY Deployment
-
-If you're familiar with deploying Node applications, the built-in app server is production-ready.
-
-Make sure to deploy the output of `npm run build`
-
-```
-├── package.json
-├── package-lock.json (or pnpm-lock.yaml, or bun.lockb)
-├── build/
-│   ├── client/    # Static assets
-│   └── server/    # Server-side code
-```
-
-## Styling
-
-This template comes with [Tailwind CSS](https://tailwindcss.com/) already configured for a simple default starting experience. You can use whatever CSS framework you prefer.
+For request functions to supabase, I used ChatGPT to help me understand the syntax, and then I implemented the logic later on.
 
 ---
 
-Built with ❤️ using React Router.
+## 2. Tools & Libraries
+
+### Core Technologies
+
+- React
+- Supabase
+- React Router
+
+### Development Tools
+
+- Vite (project bundler)
+- SCSS (custom styling)
+- Git & GitHub
+
+### AI Tools Used
+
+- ChatGPT – Used for:
+  - Understanding Supabase query syntax
+  - Assisting in README documentation
+- Opencode (DeepSeek model) – Used for generating initial UI layout and starter components, later modified manually for customization
+
+---
+
+## 3. External Resources
+
+- Supabase React Quickstart  
+  https://supabase.com/docs/guides/getting-started/quickstarts/reactjs
+
+- React Official Documentation  
+  https://react.dev/learn
+
+- YouTube Tutorial (Supabase + React Introduction)  
+  https://www.youtube.com/watch?v=KxRfAqm8eqI
+
+---
+
+## 4. Setup Instructions
+
+Follow these steps to run the project locally:
+
+1. Clone the repository
+
+git clone <repo-url>
+cd <project-folder>
+
+2. Install dependencies
+
+Make sure Node.js is installed, then run:
+
+npm install
+
+3. Create environment variables
+
+Create a file named .env.local in the root directory and add your Supabase credentials:
+
+VITE_SUPABASE_URL=supabase_project_url
+VITE_SUPABASE_PUBLISHABLE_KEY=supabase_project_publishable_key
+
+4. Run the development server
+
+npm run dev
+
+5. Open the application
+
+Open your browser and go to:
+http://localhost:5173
