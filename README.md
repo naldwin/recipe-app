@@ -29,6 +29,15 @@ To overcome this, I first tried to understand SCSS syntax better. I was already 
 
 For request functions to supabase, I used ChatGPT to help me understand the syntax, and then I implemented the logic later on.
 
+Note:
+The table column requirements are
+- id
+- title
+- ingredients[]
+- instructions
+- updatedAt
+So favorite recipes and theme were saved through local storage.
+
 ---
 
 ## 2. Tools & Libraries
