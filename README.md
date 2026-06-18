@@ -72,28 +72,28 @@ For request functions to supabase, I used ChatGPT to help me understand the synt
 Follow these steps to run the project locally:
 
 1. Clone the repository
-
+```
 git clone <repo-url>
 cd <project-folder>
-
+```
 2. Install dependencies
 
 Make sure Node.js is installed, then run:
 
-npm install
+```npm install```
 
 3. Create environment variables
 
 Create a file named .env.local in the root directory and add your Supabase credentials:
-
+```
 VITE_SUPABASE_URL=supabase_project_url
 VITE_SUPABASE_PUBLISHABLE_KEY=supabase_project_publishable_key
-
+```
 4. Run the development server
 
-npm run dev
+```npm run dev```
 
 5. Open the application
 
 Open your browser and go to:
-http://localhost:5173
+```http://localhost:5173```
